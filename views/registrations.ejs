@@ -1,19 +1,33 @@
 <%- include('partials/header') %>
 
 <div class="container">
-    <h2>Event Registrations</h2>
+    <!-- Page Title -->
+    <h2>My Event Registrations</h2>
 
-<% if(regs.length == 0){ %>
-    <p>No registrations yet</p>
-<% } %>
-
-<% regs.forEach(r => { %>
-    <div>
-        <h4><%= r.event %></h4>
-        <p><%= r.time %></p>
-        <hr>
-    </div>
-<% }) %>
+    <!-- Display Registrations List -->
+    <% if(regs && regs.length > 0){ %>
+        <!-- List of Registered Events -->
+        <% regs.forEach(r => { %>
+            <!-- Individual Registration Item -->
+            <div class="registration-item">
+                <h4><%= r.event %></h4>
+                <p>
+                    <strong>Registered:</strong> 
+                    <% if(r.time) { %>
+                        <%= r.time %>
+                    <% } else { %>
+                        Recently
+                    <% } %>
+                </p>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <!-- Message When No Registrations Available -->
+        <div class="card" style="text-align: center;">
+            <p style="color: #666;">You haven't registered for any events yet. 
+            <a href="/" style="color: #1e3a5f; text-decoration: none; font-weight: 600;">Browse events</a> to register.</p>
+        </div>
+    <% } %>
 </div>
 
 <%- include('partials/footer') %>

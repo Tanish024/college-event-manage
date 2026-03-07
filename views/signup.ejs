@@ -1,15 +1,46 @@
 <%- include('partials/header') %>
 
 <div class="container">
-    <h2>Signup</h2>
+    <!-- Page Title -->
+    <h2>Create New Account</h2>
 
+    <!-- Sign Up Form with Professional Styling -->
     <form action="/signup" method="POST">
-        <input type="text" name="name" placeholder="Enter Name" required>
-        <input type="email" name="email" placeholder="Enter Email" required>
-        <input type="password" name="password" placeholder="Enter Password" required>
+        <!-- Full Name Input Field -->
+        <input 
+            type="text" 
+            name="name" 
+            placeholder="Full Name" 
+            required
+            autocomplete="name"
+        >
 
-        <button type="submit">Signup</button>
+        <!-- Email Input Field -->
+        <input 
+            type="email" 
+            name="email" 
+            placeholder="Email Address" 
+            required
+            autocomplete="email"
+        >
+
+        <!-- Password Input Field -->
+        <input 
+            type="password" 
+            name="password" 
+            placeholder="Password" 
+            required
+            autocomplete="new-password"
+        >
+
+        <!-- Submit Button -->
+        <button type="submit">Create Account</button>
     </form>
+
+    <!-- Link to Login Page for Existing Users -->
+    <div style="text-align: center; margin-top: 20px;">
+        <p>Already have an account? <a href="/login" style="color: #1e3a5f; text-decoration: none; font-weight: 600;">Log in here</a></p>
+    </div>
 </div>
 
 <%- include('partials/footer') %>
