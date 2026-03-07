@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <h2>Event Registrations</h2>
+
+<% if(regs.length == 0){ %>
+    <p>No registrations yet</p>
+<% } %>
+
+<% regs.forEach(r => { %>
+    <div>
+        <h4><%= r.event %></h4>
+        <p><%= r.time %></p>
+        <hr>
+    </div>
+<% }) %>
+</div>
+
+<%- include('partials/footer') %>

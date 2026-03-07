@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <h2>Messages Received</h2>
+
+    <% messages.forEach(msg => { %>
+        <div class="card">
+            <p>Name: <%= msg.name %></p>
+            <p>Email: <%= msg.email %></p>
+            <p>Message: <%= msg.message %></p>
+        </div>
+    <% }) %>
+</div>
+
+<%- include('partials/footer') %>
