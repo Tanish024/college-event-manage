@@ -21,7 +21,7 @@
             <% events.forEach(event => { %>
                 <!-- Individual Event Card -->
                 <div class="event-card">
-                    <h3><%= event.name %></h3>
+                  <h3><%= event.title %></h3>
                     
                     <!-- Event Details Box -->
                     <div class="event-details">
@@ -31,7 +31,7 @@
                     
                     <!-- Registration Form -->
                     <form action="/register-event" method="POST" style="margin: 0;">
-                        <input type="hidden" name="eventName" value="<%= event.name %>">
+                        <input type="hidden" name="eventName" value="<%= event.title %>">
                         <button type="submit">Register Now</button>
                     </form>
                 </div>
